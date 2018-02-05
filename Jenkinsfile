@@ -9,7 +9,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing'
-                input 'Eres un culebras'
+                input 'Eres un culebras 2'
             }
         }
         stage('Deploy') {
