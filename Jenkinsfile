@@ -1,8 +1,7 @@
-node {
-    // Clean workspace before doing anything
-    deleteDir()
-
-    try {
+pipeline {
+  agent any
+  stages {
+        try {
         stage ('Clone') {
             checkout scm
         }
@@ -27,4 +26,5 @@ node {
         currentBuild.result = 'FAILED'
         throw err
     }
+  }
 }
