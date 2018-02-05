@@ -9,7 +9,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing'
-                input "Does the staging environment look ok?"
+                input "Si eres un culebras continuamos, no?"
             }
         }
         stage('Deploy') {
