@@ -5,7 +5,7 @@ pipeline {
       parallel {
         stage('PREUBA') {
           steps {
-            echo 'Hola'
+            checkout scm
           }
         }
         stage('Prueba 1') {
