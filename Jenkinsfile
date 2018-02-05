@@ -1,19 +1,21 @@
 pipeline {
-  agent any
-  stages {
-    stage('PREUBA') {
-      parallel {
-        stage('PREUBA') {
-          steps {
-            checkout scm
-          }
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building'
+            }
         }
-        stage('Prueba 1') {
-          steps {
-            echo 'Hola2'
-          }
+        stage('Test') {
+            steps {
+                echo 'Testing'
+                input "Does the staging environment look ok?"
+            }
         }
-      }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying'
+            }
+        }
     }
-  }
 }
