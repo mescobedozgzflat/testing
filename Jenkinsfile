@@ -11,7 +11,7 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Testing'
-        input 'Eres un culebras 2'
+        input 'Eres un culebras '
       }
     }
     stage('Deploy') {
