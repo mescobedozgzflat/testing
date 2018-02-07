@@ -1,22 +1,12 @@
 pipeline {
-  agent none
-  stages {
-    stage('Build') {
-      steps {
-        echo 'Building'
-      }
+  agent {
+        docker { image 'node:7-alpine' }
     }
-    stage('Test') {
-      steps {
-        echo 'Testing'
-        input 'Eres un culebras '
-      }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
     }
-    stage('Deploy') {
-      steps {
-        echo 'Deploying'
-        sh 'sh \'node --version\''
-      }
-    }
-  }
 }
