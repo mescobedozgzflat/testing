@@ -2,18 +2,12 @@ pipeline {
   agent any
   stages {
     stage('PREUBA') {
-      parallel {
-        stage('PREUBA') {
-          steps {
-            echo 'Hola'
-          }
-        }
-        stage('Prueba 1') {
-          steps {
-            echo 'Hola2'
-          }
-        }
-      }
+      script {
+  
+                sshagent (jenkins) {
+                sh 'ssh -o StrictHostKeyChecking=no -l 35.185.56.97 uname -a'
+                }
+           }
     }
   }
 }
