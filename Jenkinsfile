@@ -1,8 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('DEPLOY') {
-      
+    stage('PEPE') {
+      steps {
+        echo 'PEPE'
+      }
     }
   }
-}
