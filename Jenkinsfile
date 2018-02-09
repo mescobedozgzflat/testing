@@ -5,7 +5,7 @@ pipeline {
       steps {
         script {
           sshagent (credentials: ['65651b60-0c25-4e3f-9b8d-f72769b398e8']) {
-            sh '  rsync -rlvv --del --exclude=.git --exclude=rsync.log --log-file=rsync.log ./ ubuntu@35.185.56.97:/home/ubuntu/html'
+            sh '  rsync -rlvv --del --exclude=.git --exclude=rsync.log --log-file=rsync.log ./ miguel_escobedo84@35.185.56.97:/home/miguel_escobedo84/html'
           }
         }
         
