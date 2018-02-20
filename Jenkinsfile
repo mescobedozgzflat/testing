@@ -30,7 +30,7 @@ pipeline {
                 dir ('../foo') {
                     writeFile file:'dummy', text:''
                 }
-                sh 'ls -l'
+                sh 'ls ../ -l'
             }
         }
         stage('Preuba') {
