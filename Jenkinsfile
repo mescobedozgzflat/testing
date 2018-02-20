@@ -23,6 +23,7 @@ pipeline {
                 docker { image 'tectoro/node-compass' }
             }
             steps {
+                sh 'echo pwd'
                 sh 'node --version'
                 sh 'compass version'
                 sh 'compass compile ./skin/frontend/pesc/default'
