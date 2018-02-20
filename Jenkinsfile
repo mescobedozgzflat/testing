@@ -23,9 +23,8 @@ pipeline {
                 docker { image 'tectoro/node-compass' }
             }
             steps {
+                sh 'gem install bundler'
                 sh 'gem install autoprefixer-rails'
-                sh 'ls'
-                sh 'node --version'
                 sh 'compass version'
                 sh 'compass compile ./public'
             }
