@@ -32,11 +32,9 @@ pipeline {
             }
         }
         stage('Build') {
-            agent {
-                docker { image 'node:7-alpine' }
-            }
+            agent any
             steps {
-                sh 'node --version'
+                sh 'echo hola'
             }
         }
     }
