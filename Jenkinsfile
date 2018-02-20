@@ -25,7 +25,7 @@ pipeline {
             steps {
                 sh 'node --version'
                 sh 'compass version'
-                sh 'compass compile '
+                sh 'compass compile ./skin/frontend/pesc/default'
             }
         }
     }
