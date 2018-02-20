@@ -34,7 +34,9 @@ pipeline {
         stage('Build') {
             agent any
             steps {
-                sh 'echo hola'
+                sh 'ls'
+                sh 'cd ./'
+                sh 'ls'
             }
         }
     }
