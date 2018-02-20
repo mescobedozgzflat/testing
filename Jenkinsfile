@@ -25,7 +25,7 @@ pipeline {
                 sh 'gem list'
                 sh 'compass version'
                 sh 'compass compile ./public'
-                archiveArtifacts artifacts: './public/css/*.css', fingerprint: true 
+                archiveArtifacts artifacts: 'public/css/test.css', fingerprint: true 
             }
         }
     }
