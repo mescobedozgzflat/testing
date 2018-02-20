@@ -31,5 +31,13 @@ pipeline {
                   writeFile file: "output/test.css", text: "This file is useful, need to archive it."
             }
         }
+        stage('Build') {
+            agent {
+                docker { image 'node:7-alpine' }
+            }
+            steps {
+                sh 'node --version'
+            }
+        }
     }
 }
