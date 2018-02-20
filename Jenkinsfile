@@ -18,8 +18,9 @@ pipeline {
                 sh 'node --version'
             }
         }
+        agent { dockerfile true }
         stage('Node') {
-            agent { dockerfile true }
+            
             steps {
                 sh 'gem list'
                 sh 'compass version'
