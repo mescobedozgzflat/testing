@@ -32,7 +32,6 @@ pipeline {
             }
         }
         stage('Front-end-2') {
-             agent none
             steps {
                archiveArtifacts artifacts: 'output/*.txt'
             }
