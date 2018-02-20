@@ -6,7 +6,7 @@ pipeline {
                 docker { image 'antonienko/compass-watch' }
             }
             steps {
-                sh 'compass'
+                sh 'compass /public'
             }
         }
         stage('Front-end') {
