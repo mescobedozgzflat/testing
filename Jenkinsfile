@@ -23,7 +23,7 @@ pipeline {
                 docker { image 'tectoro/node-compass' }
             }
             steps {
-                sh 'npm install postcss-cli autoprefixer'
+                sh 'su npm install postcss-cli autoprefixer'
                 sh 'npx postcss *.css --use autoprefixer -d build/'
                 sh 'compass version'
                 sh 'compass compile ./public'
