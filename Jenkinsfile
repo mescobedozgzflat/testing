@@ -36,6 +36,9 @@ pipeline {
             steps {
                 sh 'ls'
                 sh 'ls ../'
+                sh 'ls ../../'
+                sh 'ls ../../../'
+                sh 'ls ../../../../'
             }
         }
     }
