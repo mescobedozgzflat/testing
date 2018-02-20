@@ -21,7 +21,6 @@ pipeline {
         stage('Node') {
             agent { dockerfile true }
             steps {
-                sh 'sudo gem install -n /usr/local/bin compass'
                 sh 'compass version'
                 sh 'compass compile ./public'
             }
