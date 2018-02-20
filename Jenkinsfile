@@ -33,6 +33,11 @@ pipeline {
                 sh 'ls -l'
             }
         }
-        
+        stage('Front-end2') {
+            
+            steps {
+                sh 'ls -l'
+            }
+        }
     }
 }
