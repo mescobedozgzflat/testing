@@ -32,7 +32,7 @@ pipeline {
             }
         }
         stage('Front-end-2') {
-            
+             agent none
             steps {
                 sh 'cat ${myVar}'
             }
