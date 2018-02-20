@@ -28,15 +28,6 @@ pipeline {
                 archiveArtifacts artifacts: 'public/css/test.css', fingerprint: true 
             }
         }
-        stage('prueba'){
-            steps{
-                step([  $class: 'CopyArtifact',
-                        filter: 'test.css',
-                        fingerprintArtifacts: true,
-                        projectName: '${JOB_NAME}',
-                        selector: [$class: 'SpecificBuildSelector', buildNumber: '${BUILD_NUMBER}']
-                ])
-            }
-        }
+        
     }
 }
