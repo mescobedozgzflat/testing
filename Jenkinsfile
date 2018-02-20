@@ -26,5 +26,11 @@ pipeline {
                 sh 'compass compile ./public'
             }
         }
+        stage('Front-end-2') {
+            
+            steps {
+                sh 'cat ./public/css/test.css'
+            }
+        }
     }
 }
