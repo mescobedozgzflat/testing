@@ -25,12 +25,16 @@ pipeline {
                 sh 'compass version'
                 sh 'compass compile ./public'
                  sh 'cat ./public/css/test.css'
+                 script {
+                      // trim removes leading and trailing whitespace from the string
+                      myVar = readFile('./public/css/test.css')
+                    }
             }
         }
         stage('Front-end-2') {
             
             steps {
-                sh 'cat ./public/css/test.css'
+                sh 'cat ${myVar}'
             }
         }
     }
