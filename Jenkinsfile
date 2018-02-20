@@ -19,9 +19,7 @@ pipeline {
             }
         }
         stage('Node') {
-            agent {
-                docker { image 'tectoro/node-compass' }
-            }
+            agent { dockerfile true }
             steps {
                 sh 'sudo gem install -n /usr/local/bin compass'
                 sh 'compass version'
