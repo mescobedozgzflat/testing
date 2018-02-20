@@ -31,6 +31,11 @@ pipeline {
                     writeFile file:'dummy', text:''
                 }
                 sh 'ls ../ -l'
+                 sh 'ls ../../ -l'
+                 sh 'ls ../../../ -l'
+                 sh 'ls ../../../../ -l'
+                 sh 'ls ../../../../../ -l'
+                 sh 'ls  -l'
             }
         }
         stage('Preuba') {
