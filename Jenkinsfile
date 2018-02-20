@@ -3,10 +3,10 @@ pipeline {
     stages {
         stage('Back-end') {
             agent {
-                docker { image 'marmelab/compass' }
-            }
-            steps {
-                sh 'compass build'
+                docker { 
+                    image 'marmelab/compass' 
+                    args '-ti -v ./public:/srv build'
+                }
             }
         }
         stage('Front-end') {
