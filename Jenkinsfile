@@ -5,7 +5,6 @@ pipeline {
             agent {
                 docker { 
                     image 'marmelab/compass' 
-                    args '-ti -v ./public:/srv build'
                 }
             }
         }
