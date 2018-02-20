@@ -34,7 +34,7 @@ pipeline {
             }
         }
         stage('Front-end2') {
-            
+            agent none
             steps {
                 sh 'ls -l'
             }
