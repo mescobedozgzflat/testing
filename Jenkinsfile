@@ -25,19 +25,10 @@ pipeline {
                 sh 'gem list'
                 sh 'compass version'
                 sh 'compass compile ./public'
-                 sh 'cat ./public/css/test.css'
-                sh "mkdir -p ../../output"
-                sh "cp ./public/css/test.css ../../output"
-            }
-        }
-        stage('Build') {
-            agent any
-            steps {
-                sh 'ls'
-                sh 'ls ../'
-                sh 'ls ../../workspace/'
-                sh 'ls ../../../'
-                sh 'ls ../../../../'
+               writeFile file: 'file.txt', text: "1234"
+                String text = readFile 'file.txt'
+        echo text
+                
             }
         }
     }
