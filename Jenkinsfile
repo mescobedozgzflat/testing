@@ -25,9 +25,7 @@ pipeline {
                 sh 'gem list'
                 sh 'compass version'
                 sh 'compass compile ./public'
-               writeFile file: 'file.txt', text: "1234"
-               readFile 'file.txt'
-                
+                sh 'rsync'
             }
         }
     }
