@@ -27,7 +27,7 @@ pipeline {
                 sh 'compass compile ./public'
                 archiveArtifacts artifacts: 'public/css/test.css', fingerprint: true 
                  sh 'ls -l'
-                dir ('foo') {
+                dir ('../foo') {
                     writeFile file:'dummy', text:''
                 }
                 sh 'ls -l'
