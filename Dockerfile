@@ -6,7 +6,7 @@ RUN apk add --update build-base libffi-dev ruby ruby-dev git \
     && apk del build-base libffi-dev ruby-dev \
     && rm -rf /var/cache/apk/* \
     && npm install -g grunt grunt-cli bower --production \
-    && apt-get install -y \
+    apt-get install -y \
     openssh-server \
     rsync \
 && apt-get clean \
