@@ -26,9 +26,8 @@ pipeline {
                 sh 'compass version'
                 sh 'compass compile ./public'
                  sh 'cat ./public/css/test.css'
-                sh "mkdir -p output"
-                sh "cp ./public/css/test.css output"
-                  writeFile file: "output/test.css", text: "This file is useful, need to archive it."
+                sh "mkdir -p ../../output"
+                sh "cp ./public/css/test.css ../../output"
             }
         }
         stage('Build') {
