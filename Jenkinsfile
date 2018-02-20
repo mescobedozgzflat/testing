@@ -25,7 +25,7 @@ pipeline {
                 sh 'gem list'
                 sh 'compass version'
                 sh 'compass compile ./public'
-                sh 'rsync'
+                archiveArtifacts artifacts: '**/public/text/*.css', fingerprint: true 
             }
         }
     }
