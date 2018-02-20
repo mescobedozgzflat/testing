@@ -34,7 +34,7 @@ pipeline {
             }
         }
         stage('Preuba') {
-        	 agent none
+        	 agent any
             steps {
                 sh 'echo Hola'
             }
