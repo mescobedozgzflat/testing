@@ -26,8 +26,7 @@ pipeline {
                 sh 'compass version'
                 sh 'compass compile ./public'
                writeFile file: 'file.txt', text: "1234"
-                String text = readFile 'file.txt'
-        echo text
+               readFile 'file.txt'
                 
             }
         }
