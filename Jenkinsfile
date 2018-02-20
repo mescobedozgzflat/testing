@@ -18,5 +18,13 @@ pipeline {
                 sh 'node --version'
             }
         }
+        stage('Node') {
+            agent {
+                docker { image 'tectoro:node-compass' }
+            }
+            steps {
+                sh 'node --version'
+            }
+        }
     }
 }
