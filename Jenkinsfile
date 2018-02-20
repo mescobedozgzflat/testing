@@ -23,7 +23,7 @@ pipeline {
                 docker { image 'tectoro/node-compass' }
             }
             steps {
-                sh 'sudo apt-get install rubygems'
+                sh 'gem install compass'
                 sh 'compass version'
                 sh 'compass compile ./public'
             }
