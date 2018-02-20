@@ -36,7 +36,7 @@ pipeline {
         stage('Preuba') {
         	 agent any
             steps {
-                sh 'echo Hola'
+               sh 'ls -l'
             }
         }
     }
