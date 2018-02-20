@@ -35,7 +35,7 @@ pipeline {
             agent any
             steps {
                 sh 'ls'
-                sh 'cd ./'
+                sh 'cd ../'
                 sh 'ls'
             }
         }
