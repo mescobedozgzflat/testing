@@ -21,6 +21,7 @@ pipeline {
         stage('Node') {
             agent { dockerfile true }
             steps {
+                sh 'gem list'
                 sh 'compass version'
                 sh 'compass compile ./public'
             }
