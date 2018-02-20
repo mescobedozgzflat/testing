@@ -25,6 +25,7 @@ pipeline {
             steps {
                 sh 'node --version'
                 sh 'compass version'
+                sh 'compass compile '
             }
         }
     }
