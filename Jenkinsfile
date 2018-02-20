@@ -33,10 +33,9 @@ pipeline {
                 sh 'ls -l'
             }
         }
-        stage('Front-end2') {
-            agent none
+        stage('Preuba') {
             steps {
-                sh 'ls -l'
+                sh 'echo Hola'
             }
         }
     }
