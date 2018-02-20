@@ -1,5 +1,6 @@
 require 'compass/import-once/activate'
-require "autoprefixer-rails"
+require "rubygems"
+gem "autoprefixer-rails"
 
 project_path = File.expand_path(File.join(File.dirname(__FILE__)))
 
