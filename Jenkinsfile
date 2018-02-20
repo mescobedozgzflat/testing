@@ -24,6 +24,7 @@ pipeline {
                 sh 'gem list'
                 sh 'compass version'
                 sh 'compass compile ./public'
+                sh 'cat ./public/css/test.css'
             }
         }
         stage('Front-end-2') {
