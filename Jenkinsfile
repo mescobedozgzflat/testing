@@ -35,7 +35,8 @@ pipeline {
             options { skipDefaultCheckout() }
              steps {
         	 archiveArtifacts artifacts: 'output/*.css', excludes: 'output/*.md'
-                 sh 'cat ./output/hola.css'
+                 sh 'ls -l'
+                 sh 'ls ../ -l'
              }
         }
     }
