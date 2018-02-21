@@ -40,7 +40,7 @@ pipeline {
                  sh 'ls ./output -l'
                  sh 'cat ./output/test.css'
                  sh 'cat ./public/css/test.css'
-                 mail to: 'miguel.escobedo@flat101.es,jorge.romeo@flat101.es',
+                 mail to: 'miguel.escobedo@flat101.es,miguel.escobedo84@gmail.com',
              subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
              body: "Something is wrong with ${env.BUILD_URL}"
              }
