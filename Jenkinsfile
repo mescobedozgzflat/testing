@@ -25,24 +25,13 @@ pipeline {
                 sh 'gem list'
                 sh 'compass version'
                 sh 'compass compile ./public'
-                archiveArtifacts artifacts: 'public/css/test.css', fingerprint: true 
-                 sh 'ls -l'
-                dir ('../foo') {
-                    writeFile file:'dummy', text:''
-                }
-                sh 'ls ../ -l'
-                 sh 'ls ../../ -l'
-                 sh 'ls ../../../ -l'
-                 sh 'ls ../../../../ -l'
-                 sh 'ls ../../../../../ -l'
-                 sh 'ls  -l'
+                 sh "mkdir -p output"
+                 writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
             }
         }
         stage('Preuba') {
-        	 agent any
-            steps {
-               sh 'ls -l'
-            }
+            agent node
+        	 archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
         }
     }
 }
