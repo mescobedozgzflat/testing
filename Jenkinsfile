@@ -26,7 +26,7 @@ pipeline {
                 sh 'compass version'
                 sh 'compass compile ./public'
                  sh "mkdir -p output"
-                sh "cp ./public/css/hola.css output"
+                sh "cp ./public/css/hola.css ./output"
                  writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
             }
         }
@@ -35,7 +35,7 @@ pipeline {
             options { skipDefaultCheckout() }
              steps {
         	 archiveArtifacts artifacts: 'output/*.css', excludes: 'output/*.md'
-                 sh 'cat output/hola.css'
+                 sh 'cat ./output/hola.css'
              }
         }
     }
