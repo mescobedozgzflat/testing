@@ -31,7 +31,9 @@ pipeline {
         }
         stage('Preuba') {
             agent node
+             steps {
         	 archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
+             }
         }
     }
 }
