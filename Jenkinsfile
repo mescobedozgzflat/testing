@@ -30,7 +30,7 @@ pipeline {
             }
         }
         stage('Preuba') {
-            agent anay
+            agent any
             stpes{
         	 archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
             }
