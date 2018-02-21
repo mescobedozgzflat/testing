@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+   agent any
     stages { 
         stage('Back-end') {
             agent {
@@ -20,7 +20,7 @@ pipeline {
         }
         
         stage('Node') {
-             agent  dockerfile true
+            agent  dockerfile true
             steps {
                 sh 'gem list'
                 sh 'compass version'
