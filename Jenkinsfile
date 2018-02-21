@@ -1,5 +1,5 @@
 pipeline {
-   agent any
+    agent none
     stages { 
         stage('Back-end') {
             agent {
@@ -18,24 +18,31 @@ pipeline {
                 sh 'node --version'
             }
         }
-        
+      
         stage('Node') {
-            agent  dockerfile true
+              agent { dockerfile true }
             steps {
                 sh 'gem list'
                 sh 'compass version'
                 sh 'compass compile ./public'
-                 sh "mkdir -p output"
-                 writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
+                archiveArtifacts artifacts: 'public/css/test.css', fingerprint: true 
+                 sh 'ls -l'
+                dir ('../foo') {
+                    writeFile file:'dummy', text:''
+                }
+                sh 'ls ../ -l'
+                 sh 'ls ../../ -l'
+                 sh 'ls ../../../ -l'
+                 sh 'ls ../../../../ -l'
+                 sh 'ls ../../../../../ -l'
+                 sh 'ls  -l'
             }
         }
         stage('Preuba') {
-            agent any
-            steps{
-        	 archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
+        	 agent any
+            steps {
+               sh 'ls -l'
             }
-        
         }
-        
     }
 }
