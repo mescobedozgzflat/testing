@@ -36,7 +36,7 @@ pipeline {
              steps {
         	 archiveArtifacts artifacts: 'output/*.css', excludes: 'output/*.md'
                  sh 'ls -l'
-                 sh 'ls ../ -l'
+                 sh 'ls ./output -l'
              }
         }
     }
