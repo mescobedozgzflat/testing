@@ -32,7 +32,6 @@ pipeline {
         stage('Preuba') {
             agent any
              steps {
-                 options { skipDefaultCheckout() }
         	 archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
              }
         }
