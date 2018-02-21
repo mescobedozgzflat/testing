@@ -18,9 +18,8 @@ pipeline {
                 sh 'node --version'
             }
         }
-      
+        node{
         stage('Node') {
-            node {
               agent { dockerfile true }
             steps {
                 sh 'gem list'
@@ -35,6 +34,7 @@ pipeline {
             steps{
         	 archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
             }
+        
         }
         }
     }
