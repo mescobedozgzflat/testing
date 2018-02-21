@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent  dockerfile true
     stages { 
         stage('Back-end') {
             agent {
@@ -20,7 +20,6 @@ pipeline {
         }
         
         stage('Node') {
-              agent { dockerfile true }
             steps {
                 sh 'gem list'
                 sh 'compass version'
@@ -30,7 +29,6 @@ pipeline {
             }
         }
         stage('Preuba') {
-            agent any
             steps{
         	 archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
             }
