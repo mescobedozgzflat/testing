@@ -34,7 +34,7 @@ pipeline {
             agent any
             options { skipDefaultCheckout() }
              steps {
-        	 archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
+        	 archiveArtifacts artifacts: 'output/*.css', excludes: 'output/*.md'
                  sh 'cat output/hola.css'
              }
         }
