@@ -18,7 +18,7 @@ pipeline {
                 sh 'node --version'
             }
         }
-        node{
+        
         stage('Node') {
               agent { dockerfile true }
             steps {
@@ -36,6 +36,6 @@ pipeline {
             }
         
         }
-        }
+        
     }
 }
