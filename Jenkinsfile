@@ -37,7 +37,6 @@ pipeline {
         stage('Preuba') {
             agent any
              steps {
-                 checkout scm
         	 //archiveArtifacts artifacts: 'output/*.css', excludes: 'output/*.md'
                 
                  sh 'ls -l'
