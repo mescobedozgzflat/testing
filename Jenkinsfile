@@ -38,7 +38,6 @@ pipeline {
         	 //archiveArtifacts artifacts: 'output/*.css', excludes: 'output/*.md'
                  sh 'ls ./output -l'
                  sh 'ls -l'
-                 sh 'ls ./output2 -l'
                  sh 'cat ./output/test.css'
                  sh 'cat ./public/css/test.css'
                  mail to: 'miguel.escobedo@flat101.es,miguel.escobedo84@gmail.com',
