@@ -28,7 +28,9 @@ pipeline {
                 sh 'compass version'
                 sh 'compass compile ./public'
                  sh "mkdir -p output2"
+                 sh 'ls -l'
                 sh "cp ./public/css/test.css ./output2"
+                 sh 'ls -l'
                  //writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
             }
         }
