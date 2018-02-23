@@ -27,7 +27,7 @@ pipeline {
                 sh 'gem list'
                 sh 'compass version'
                 sh 'compass compile ./public'
-                 sh "mkdir -p output2"
+                 sh "mkdir -p output3"
                  sh 'ls -l'
                 sh "cp ./public/css/test.css ./output2"
                  sh 'ls -l'
@@ -37,10 +37,10 @@ pipeline {
         stage('Preuba') {
             agent any
              steps {
+                 checkout scm
         	 //archiveArtifacts artifacts: 'output/*.css', excludes: 'output/*.md'
-                 sh 'ls ./output2 -l'
+                
                  sh 'ls -l'
-                 sh 'cat ./output2/test.css'
                  sh 'cat ./public/css/test.css'
                  mail to: 'miguel.escobedo@flat101.es,miguel.escobedo84@gmail.com',
              subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
