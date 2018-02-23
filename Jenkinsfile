@@ -1,5 +1,6 @@
 pipeline {
     agent none
+    options { skipDefaultCheckout() }
     stages { 
         stage('Back-end') {
             agent {
@@ -32,7 +33,6 @@ pipeline {
         }
         stage('Preuba') {
             agent any
-            options { skipDefaultCheckout() }
              steps {
         	 //archiveArtifacts artifacts: 'output/*.css', excludes: 'output/*.md'
                  sh 'ls ./output -l'
