@@ -23,11 +23,12 @@ pipeline {
         stage('Node') {
               agent { dockerfile true }
             steps {
+                checkout scm
                 sh 'gem list'
                 sh 'compass version'
                 sh 'compass compile ./public'
-                 sh "mkdir -p output"
-                sh "cp ./public/css/test.css ./output"
+                 sh "mkdir -p output2"
+                sh "cp ./public/css/test.css ./output2"
                  //writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
             }
         }
@@ -37,7 +38,7 @@ pipeline {
         	 //archiveArtifacts artifacts: 'output/*.css', excludes: 'output/*.md'
                  sh 'ls ./output -l'
                  sh 'ls -l'
-                 sh 'ls ./output -l'
+                 sh 'ls ./output2 -l'
                  sh 'cat ./output/test.css'
                  sh 'cat ./public/css/test.css'
                  mail to: 'miguel.escobedo@flat101.es,miguel.escobedo84@gmail.com',
