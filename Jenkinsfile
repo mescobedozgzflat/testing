@@ -27,14 +27,14 @@ pipeline {
                 sh 'compass compile ./public'
                  sh "mkdir -p output"
                 sh "cp ./public/css/test.css ./output"
-                 writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
+                 //writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
             }
         }
         stage('Preuba') {
             agent any
             options { skipDefaultCheckout() }
              steps {
-        	 archiveArtifacts artifacts: 'output/*.css', excludes: 'output/*.md'
+        	 //archiveArtifacts artifacts: 'output/*.css', excludes: 'output/*.md'
                  sh 'ls ./output -l'
                  sh 'ls -l'
                  sh 'ls ./output -l'
